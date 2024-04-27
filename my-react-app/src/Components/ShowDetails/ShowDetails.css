@@ -1,0 +1,44 @@
+/* ShowDetails.css */
+
+.container-sh {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  .input-container label {
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  li p {
+    margin: 5px 0;
+  }
+  
+  li p:first-child {
+    margin-top: 0;
+  }
+  
+
+  .ONc{
+    color: green;
+  }
+  .OFFc{
+    color: red;
+  }
