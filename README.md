@@ -7,8 +7,9 @@ Ceramic heater uses nichrome coil when we give 230v supply it will start to gene
 
 For ESP8266 control i have used
 
-1.Thermocouple (type-K)
-2.Max6675 module 
+1.Thermocouple (type-K) <br>
+
+2.Max6675 module  <br>
 3.5v relay
 
 ![image](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/24f4b240-752e-424b-870d-d7c04e82e9fe)
