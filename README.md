@@ -1,4 +1,4 @@
-# Heater_Project
+![Screenshot (36)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/f549434f-ca4b-48d9-a7e2-14f3dd78ffa7)# Heater_Project
 Ceramic Heater Industrial Academic project
 
 Ceramic heater uses nichrome coil when we give 230v supply it will start to generate heat.
@@ -10,10 +10,17 @@ For ESP8266 control i have used
 1.Thermocouple (type-K) <br>
 
 2.Max6675 module  <br>
+
 3.5v relay
 
 ![image](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/24f4b240-752e-424b-870d-d7c04e82e9fe)
 
+
+
+![Screenshot (34)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/d0e2b4f2-36ed-49a4-8f2f-40d0691e777a)
+![Screenshot (33)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/7db0d507-220f-418a-a864-116a7b307c8a)
+![Uploading Screenshot (35).png…]()
+![Uploading Screenshot (36).png…]()
 
 
 
