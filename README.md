@@ -19,8 +19,8 @@ For ESP8266 control i have used
 
 ![Screenshot (34)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/d0e2b4f2-36ed-49a4-8f2f-40d0691e777a)
 ![Screenshot (33)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/7db0d507-220f-418a-a864-116a7b307c8a)
-![Uploading Screenshot (35).png…]()
-![Uploading Screenshot (36).png…]()
+![Screenshot (35)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/9ebd7121-fb24-40eb-96e4-a9457d4f21ad)
+
 
 
 
