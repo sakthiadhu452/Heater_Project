@@ -1,3 +1,6 @@
+*Block Diagram*
+![image](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/27a54a40-1baa-455f-a1f7-f1baa5f85449)
+
 ![Screenshot (36)](https://github.com/sakthiadhu452/Heater_Project/assets/155182564/f549434f-ca4b-48d9-a7e2-14f3dd78ffa7)# Heater_Project
 Ceramic Heater Industrial Academic project
 
