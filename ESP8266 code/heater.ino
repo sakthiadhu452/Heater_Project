@@ -77,4 +77,123 @@ void loop() {
     updateTemperature(celcius);
   }
 
-  Serial.pri
+  Serial.println();
+  Serial.println("Waiting 2 minutes before the next round...");
+  delay(120000);
+}
+
+String getMode() {
+  String mode = "";
+  if (WiFi.status() == WL_CONNECTED) {
+    std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
+    client->setInsecure();
+
+    HTTPClient https;
+    Serial.println("[HTTPS] begin...");
+
+    if (https.begin(*client, "https://heater-1.onrender.com/getMode")) {
+      https.setTimeout(10000);
+      Serial.println("[HTTPS] GET...");
+
+      int httpCode = https.GET();
+      
+      if (httpCode > 0) {
+        Serial.printf("[HTTPS] GET... code: %d\n", httpCode);
+
+        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+          mode = https.getString();
+          Serial.println("Mode:");
+          Serial.println(mode);
+        }
+      } else {
+        Serial.printf("[HTTPS] GET... failed, error: %s\n", https.errorToString(httpCode).c_str());
+      }
+
+      https.end();
+    } else {
+      Serial.println("[HTTPS] Unable to connect");
+    }
+  } else {
+    Serial.println("WiFi not connected.");
+  }
+
+  return mode;
+}
+
+String getStatus() {
+  String status = "";
+  if (WiFi.status() == WL_CONNECTED) {
+    std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
+    client->setInsecure();
+
+    HTTPClient https;
+    Serial.println("[HTTPS] begin...");
+
+    if (https.begin(*client, "https://heater-1.onrender.com/getStatus")) {
+      https.setTimeout(10000);
+      Serial.println("[HTTPS] GET...");
+
+      int httpCode = https.GET();
+      
+      if (httpCode > 0) {
+        Serial.printf("[HTTPS] GET... code: %d\n", httpCode);
+
+        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+          status = https.getString();
+          Serial.println("Status:");
+          Serial.println(status);
+        }
+      } else {
+        Serial.printf("[HTTPS] GET... failed, error: %s\n", https.errorToString(httpCode).c_str());
+      }
+
+      https.end();
+    } else {
+      Serial.println("[HTTPS] Unable to connect");
+    }
+  } else {
+    Serial.println("WiFi not connected.");
+  }
+
+  return status;
+}
+
+void sendPostRequest(String state) {
+  WiFiClient client;
+
+  if (client.connect("heater-1.onrender.com", 443)) {
+    Serial.println("Connected to server");
+    
+    client.println("POST /changestate HTTP/1.1");
+    client.println("Host: heater-1.onrender.com");
+    client.println("Connection: close");
+    client.println("Content-Type: application/json");
+    client.print("Content-Length: ");
+    client.println(state.length());
+    client.println();
+    client.println(state);
+    client.println();
+  } else {
+    Serial.println("Connection failed");
+  }
+}
+
+void updateTemperature(int temperature) {
+  WiFiClient client;
+
+  if (client.connect("heater-1.onrender.com", 443)) {
+    Serial.println("Connected to server");
+    
+    client.println("POST /updateTemperature HTTP/1.1");
+    client.println("Host: heater-1.onrender.com");
+    client.println("Connection: close");
+    client.println("Content-Type: application/json");
+    client.print("Content-Length: ");
+    client.println(String(temperature).length());
+    client.println();
+    client.println(temperature);
+    client.println();
+  } else {
+    Serial.println("Connection failed");
+  }
+}
